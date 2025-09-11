@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Ramiro Barcelos</title>
+        <link rel="stylesheet" href="start.css" />
+    
+        <script>
+            function changeHouseColor(color) {
+                document.getElementById("houseElement").style = "background-color: "+color;
+            }
+        </script>
+    
+    </head>
+    <body style="height: 100%;">
+        
+        <div class="garage">
+            GARAGEM
+        </div>
+        <div style="background-color: green; color: white; height: 20%;">
+            PATIO DA FRENTE
+        </div>
+        <div class="house" id="houseElement">
+            CASA
+        </div>
+        <div class="acoes">
+            <button onclick="changeHouseColor('yellow')"> Mudar cor da casa para amarelo </button>
+            <button onclick="changeHouseColor('green')"> Mudar cor da casa para verde </button>
+            <button onclick="changeHouseColor('blue')"> Mudar cor da casa para blue </button>
+        </div>
+    </body>    
+</html>
