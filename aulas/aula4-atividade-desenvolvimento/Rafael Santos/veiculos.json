@@ -1,0 +1,23 @@
+[
+  {
+    "modelo": "Lancer Evo",
+    "imagem": "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202506/20250622/mitsubishi-lancer-2.0-evolution-x-4x4-16v-turbo-intercooler-gasolina-4p-automatico-wmimagem21313757257.jpg?s=fill&w=552&h=414&q=60",
+    "alt": "Foto de um Mitsubishi Lancer Evo branco",
+    "cor": "Branco",
+    "valor": "R$ 140.000,00"
+  },
+  {
+    "modelo": "Volkswagen Golf GTI",
+    "imagem": "https://www.karvi.com.br/blog/wp-content/uploads/2024/10/2024-volkswagen-golf-gti-380-5-850x478.jpg",
+    "alt": "Desenho de um Toyota Corolla azul",
+    "cor": "Branco",
+    "valor": "R$ 275.500,00"
+  },
+  {
+    "modelo": "Hyundai HB-20",
+    "imagem": "https://quatrorodas.abril.com.br/wp-content/uploads/2021/06/QR-642CARRO-HB20-01.eps_-e1623778720975.jpg?quality=70&strip=info&w=1024&crop=1",
+    "alt": "Desenho de um Hyundai HB20 branco",
+    "cor": "Branco",
+    "valor": "R$ 50.000,00"
+  }
+]

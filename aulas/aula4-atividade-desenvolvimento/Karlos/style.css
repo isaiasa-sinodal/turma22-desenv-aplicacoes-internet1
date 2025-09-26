@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: white;
+    background-color: #243084;
+    padding: 10px;
+}
+
+header .nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header .nav-menu li:not(:last-child)::after {
+    content: "|";
+    color: white;
+    margin: 0 8px;
+}
+
+header .nav-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    background-color: #243084;
+    color: white;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.banner {
+    background-color: #8dc6f1;
+    padding: 10px;
+}
+
+.banner .titulo {
+    font-weight: bold;
+    color: black;
+}
+
+.banner .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner .conteudo p {
+    margin: 10px 0;
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.conteiner .titulo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+}
+
+.conteudo-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conteiner-veiculos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #c0a8a8;
+    padding: 10px;
+    width: 500px;
+    height: 220px;
+    box-sizing: border-box;
+}
+
+.modelo {
+    width: 300px;
+    height: 250px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.modelo h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #4a5ac7;
+    color: white;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+footer .conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-size: 2rem;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu li {
+    display: inline;
+    color: white;
+    font-size: 1.6rem;
+}   
+
+.footer-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-menu li:not(:last-child)::after {
+    content: "|";
+    color: white;
+    margin: 0 8px;
+}
+
+.copyright {
+    color: white;
+    font-size: 1.6rem;
+    margin-right: 40px;
+}

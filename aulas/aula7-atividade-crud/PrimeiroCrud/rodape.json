@@ -1,0 +1,21 @@
+{
+  "rodape": {
+    "links": [
+      { "nome": "Pagina Inicial", "link": "#" },
+      { "nome": "Sobre Nos", "link": "#" },
+      { "nome": "Politica de Privacidade", "link": "#" },
+      { "nome": "Termos de Uso", "link": "#" }
+    ],
+    "redesSociais": [
+      { "nome": "Facebook", "link": "#" },
+      { "nome": "Instagram", "link": "#" },
+      { "nome": "WhatsApp", "link": "#" }
+    ],
+    "informacoes": {
+      "direitos": "Carros Sinodal Web © 2023 - Todos os direitos reservados",
+      "endereco": "Ramiro Barcelos, 1526 - Montenegro - RS",
+      "telefone": "(51) 99675-7641",
+      "email": "contato@carrossinodal.com.br"
+    }
+  }
+}

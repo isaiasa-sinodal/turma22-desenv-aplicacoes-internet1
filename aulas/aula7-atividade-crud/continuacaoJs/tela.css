@@ -1,0 +1,140 @@
+*{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        /* Menu Superior */
+        header {
+            background-color: #222e84;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Banner Principal */
+        .banner {
+            background-color: #aee0ff;
+            text-align: center;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+        }
+
+        .banner button {
+            margin-top: 10px;
+            background-color: #222e84;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .banner button:hover {
+            background-color: #1a2461;
+        }
+
+        /* Veículos em Destaque */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 15px;
+            background-color: #e8e3e3;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100px;
+            height: auto;
+        }
+
+        .info {
+            flex: 1;
+            margin-left: 15px;
+        }
+
+        .info h3 {
+            margin-bottom: 5px;
+        }
+
+        .info p {
+            margin: 3px 0;
+        }
+
+        .card button {
+            background-color: #222e84;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .card button:hover {
+            background-color: #1a2461;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #222e84;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .pageButton {
+            font-size: 50px;
+        }

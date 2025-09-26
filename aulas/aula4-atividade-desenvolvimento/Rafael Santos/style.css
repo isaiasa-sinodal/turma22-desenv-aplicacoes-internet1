@@ -1,0 +1,133 @@
+
+
+
+html, body {
+  height: 100%; 
+  margin: 0;
+}
+
+body {
+  display: flex; 
+  flex-direction: column; 
+}
+
+#content-wrap {
+  flex: 1 0 auto; 
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- CABEÇALHO --- */
+.menu-principal {
+  background-color: #4a5c9a;
+  color: white;
+  padding: 15px 0;
+}
+
+.menu-principal ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu-principal a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.banner-principal {
+  background-color: #a4c2e3;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.banner-principal h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.veiculos-destaque {
+  background-color: #e0e0e0;
+  padding: 50px 0;
+}
+
+.veiculos-destaque h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.lista-veiculos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-veiculo {
+  background-color: #d1c4c4;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  min-width: 250px;
+}
+
+.card-veiculo img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card-veiculo .valor {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #4a5c9a;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- RODAPÉ --- */
+footer {
+  background-color: #4a5c9a;
+  color: white;
+  padding: 20px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-rodape a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}

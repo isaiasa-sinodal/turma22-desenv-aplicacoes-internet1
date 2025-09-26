@@ -1,0 +1,213 @@
+/* Reset básico para tirar margens e espaçamentos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== MENU SUPERIOR ===== */
+.header {
+  background-color: #222;          /* fundo escuro */
+  padding: 15px 0;
+}
+
+.nav {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;         /* centraliza os itens */
+  gap: 40px;                       /* espaço entre links */
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu-list li a:hover {
+  color: #f39c12;                  /* cor quando passa o mouse */
+}
+
+/* ===== BANNER PRINCIPAL ===== */
+.banner {
+  background: url("img/banner.jpg") center/cover no-repeat; 
+  color: rgb(8, 8, 8);
+  text-align:center;
+  padding: 80px 20px;
+}
+
+.banner h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.banner p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.banner button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #b17006;
+  color: rgb(215, 215, 215);
+  border: none;
+  border-radius: 1px;
+  cursor:progress;
+  transition: 0.3s;
+}
+
+.banner button:hover {
+  background-color: #d35400;
+}
+
+/* ===== SEÇÃO DE VEÍCULOS EM DESTAQUE ===== */
+.destaques {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.destaques h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.destaques {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* espaço entre os cards */
+}
+
+.carro {
+
+  background-color: rgb(243, 243, 243);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  display: flex;
+  flex-direction: column;   /* organiza itens em coluna */
+  align-items: center;      /* centraliza horizontalmente */
+  text-align: center;
+}
+
+
+
+.carro img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.carro h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.carro p {
+  margin-bottom: 5px;
+}
+
+.carro button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carro button:hover {
+  background-color: #1e8449;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #f39c12;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para o rodapé */
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 25px 0;
+  text-align: center;
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin: 15px 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 12px;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 8px 15px;
+  background-color: #444;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #ffcc00;
+  color: #222;
+}
