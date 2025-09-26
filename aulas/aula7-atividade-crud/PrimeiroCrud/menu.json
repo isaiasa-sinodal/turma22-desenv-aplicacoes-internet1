@@ -1,0 +1,8 @@
+{
+  "menu": [
+    { "id": 1, "nome": "Veiculos Novos", "link": "#" },
+    { "id": 2, "nome": "Veiculos Seminovos", "link": "#" },
+    { "id": 3, "nome": "Tabela FIPE", "link": "#" },
+    { "id": 4, "nome": "Entre em Contato", "link": "#" }
+  ]
+}
