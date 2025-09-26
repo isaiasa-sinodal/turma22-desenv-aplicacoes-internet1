@@ -1,0 +1,144 @@
+.cabecalho {
+    max-width: 1300px;
+    margin: auto;
+    padding: 1rem;
+  }
+  header {
+    background-color: #424396;
+    color:  #ffffff;
+    padding: 0;
+    box-shadow: 0 10px 20px var(--sombra);
+  }
+  
+  header .cabecalho {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transicao);
+  }
+
+  .banner {
+    background: linear-gradient(to right, #6f71e4);
+    color: var(--branco);
+    padding: 6rem 2rem 5rem;
+    margin: 50px;
+  }
+  
+  .banner {
+    max-width: 1200px;
+    margin-top: 20px;
+    text-align: center;
+    border: 0px;
+    box-shadow:  0 4px 20px black;
+    transition: transform 0.5s;
+    border-radius: 5px;
+
+  }
+  
+  .banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .destaques {
+    font-size: 30;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .hondacivic, .toyotacorolla, .huyndai{
+    display: flex;
+    align-items: center;
+    background-color: rgb(224, 204, 138);
+    padding: 50px;
+    width: 1000px;
+    height: 50px;
+    gap: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 50px;
+   }
+  
+  .destaques p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--cinza);
+    font-size: 1.1rem;
+  }
+
+  .destaques-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .destaques-item h3 {
+    color: var(--verde-escuro);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .destaques-item p {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+    flex-grow: 1;
+  }
+  
+  .btn-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: rgb(99, 76, 0);
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid var(--verde);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color var(--transicao), color var(--transicao);
+  }
+  
+  .btn-link:hover {
+    background-color: var(--verde);
+    color: var(--branco);
+  }
+
+  .imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imagem img {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px var(--sombra);
+  }
+
+  .footer1{
+    background-color: #6f71e4;
+    color: black;
+    display: flex;
+    gap: 500px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+  }
