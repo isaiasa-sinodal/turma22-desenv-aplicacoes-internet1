@@ -1,0 +1,12 @@
+<app-modal title="Excluir Veículo" [isOpen]="isOpen" (onClose)="handleCancel()">
+  <p style="line-height: 1.4">
+    Tem certeza de que deseja excluir {{ vehicleDescriptionPrefix
+    }}<strong>{{ vehicleDescription }}</strong
+    >? Essa ação não poderá ser desfeita.
+  </p>
+
+  <div style="display: flex; justify-content: flex-end; gap: 16px; margin-top: 16px">
+    <app-button type="button" (click)="handleCancel()">Cancelar</app-button>
+    <app-button type="button" (click)="handleConfirm()">Confirmar</app-button>
+  </div>
+</app-modal>

@@ -1,0 +1,13 @@
+<app-modal title="Editar Veículo" [isOpen]="isOpen" (onClose)="handleCancel()">
+  <form [formGroup]="form" (ngSubmit)="handleSubmit()">
+    <app-input formControlName="chassi" label="Chassi" [required]="true"></app-input>
+    <app-input formControlName="brand" label="Marca" [required]="true"></app-input>
+    <app-input formControlName="model" label="Modelo" [required]="true"></app-input>
+    <app-input formControlName="year" label="Ano" type="number" [required]="true"></app-input>
+
+    <div style="display: flex; justify-content: flex-end; gap: 16px; margin-top: 32px">
+      <app-button type="button" (click)="handleCancel()">Cancelar</app-button>
+      <app-button type="submit">Salvar</app-button>
+    </div>
+  </form>
+</app-modal>
