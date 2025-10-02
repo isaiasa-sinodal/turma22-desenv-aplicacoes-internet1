@@ -1,0 +1,58 @@
+<div class="homePage">
+  <div class="header">
+    <h1>Lista de Veículos</h1>
+    <app-button (click)="openCreateModal()">Novo veículo</app-button>
+  </div>
+
+  <ng-container *ngIf="vehicles.length; else emptyList">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Chassi</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Ano</th>
+          <th class="actionsHeader">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicles">
+          <td>{{ vehicle.chassi | uppercase }}</td>
+          <td>{{ vehicle.brand }}</td>
+          <td>{{ vehicle.model }}</td>
+          <td>{{ vehicle.year }}</td>
+          <td class="actions">
+            <app-button size="sm" (click)="selectVehicleToEdit(vehicle.id)"> Editar </app-button>
+            <app-button size="sm" (click)="selectVehicleToDelete(vehicle)"> Excluir </app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+
+  <ng-template #emptyList>
+    <div class="emptyList">
+      <p>Não há veículos cadastrados</p>
+    </div>
+  </ng-template>
+
+  <app-create-vehicle-modal
+    [isOpen]="isCreateModalOpen"
+    (onClose)="closeCreateModal()"
+    (onReload)="handleReload()"
+  ></app-create-vehicle-modal>
+
+  <app-edit-vehicle-modal
+    [isOpen]="!!vehicleToEdit"
+    [id]="vehicleToEdit"
+    (onClose)="closeEditModal()"
+    (onReload)="handleReload()"
+  ></app-edit-vehicle-modal>
+
+  <app-delete-vehicle-modal
+    [isOpen]="!!vehicleToDelete"
+    [vehicle]="vehicleToDelete"
+    (onClose)="closeDeleteModal()"
+    (onReload)="handleReload()"
+  ></app-delete-vehicle-modal>
+</div>

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "home",
+    "label": "Início",
+    "href": "/"
+  },
+  {
+    "id": "sobre",
+    "label": "Sobre",
+    "href": "/sobre"
+  },
+  {
+    "id": "servicos",
+    "label": "Serviços",
+    "href": "/servicos",
+    "children": [
+      {
+        "id": "web",
+        "label": "Web",
+        "href": "/servicos/web"
+      },
+      {
+        "id": "mobile",
+        "label": "Mobile",
+        "href": "/servicos/mobile"
+      }
+    ]
+  },
+  {
+    "id": "blog",
+    "label": "Blog",
+    "href": "/blog"
+  },
+  {
+    "id": "contato",
+    "label": "Contato",
+    "href": "/contato",
+    "cta": true
+  }
+]

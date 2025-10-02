@@ -1,0 +1,28 @@
+{
+  "clientList": [
+    {
+      "id": 1,
+      "name": "Carlos Mendes",
+      "age": 34,
+      "phone": "+55 11 99876-5432"
+    },
+    {
+      "id": 2,
+      "name": "Fernanda Silva",
+      "age": 27,
+      "phone": "+55 21 98765-4321"
+    },
+    {
+      "id": 3,
+      "name": "João Pereira",
+      "age": 41,
+      "phone": "+55 31 91234-5678"
+    },
+    {
+      "id": 4,
+      "name": "Ana Souza",
+      "age": 29,
+      "phone": "+55 85 97654-3210"
+    }
+  ]
+}

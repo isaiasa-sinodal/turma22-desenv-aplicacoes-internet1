@@ -1,0 +1,13 @@
+<div class="inputContainer">
+  <label [attr.for]="name">{{ labelText }}</label>
+  <input
+    [id]="name"
+    [name]="name"
+    [type]="type"
+    [required]="required"
+    [disabled]="disabled"
+    [value]="value"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+  />
+</div>

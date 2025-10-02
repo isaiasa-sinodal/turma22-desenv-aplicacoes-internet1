@@ -1,0 +1,30 @@
+{
+  "banner": {
+    "titulo": "Inicio",
+    "mensagem": "Seu usado vale mais aqui na nossa loja",
+    "botao": "Faca uma cotacao"
+  },
+  "veiculosDestaque": [
+    {
+      "id": 1,
+      "nome": "Honda Civic 2024",
+      "imagem": "civicusado.png",
+      "cor": "Vermelha",
+      "valor": "R$ 140.000,00"
+    },
+    {
+      "id": 2,
+      "nome": "Toyota Corolla 2020",
+      "imagem": "corolla.png.png",
+      "cor": "Azul",
+      "valor": "R$ 101.000,00"
+    },
+    {
+      "id": 3,
+      "nome": "Hyundai HB-20",
+      "imagem": "hb20.png",
+      "cor": "Branca",
+      "valor": "R$ 70.000,00"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carros Sinodal Web</title>
+  <script src="funcoes.js"></script>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <!-- MENU SUPERIOR -->
+  <div class="header">
+    <div class="nav">
+      <h1 class="nav">Sinodal Filmes Locadora</h1>
+    </div>
+  </div>
+
+  <div class="lista">
+
+    <div class="divHeadActions">
+      <button class="editBtn" onclick="newItem()">Novo Filme</button>
+    </div>
+
+    <div class="divForm" id="divFormulario" style="display:none">
+
+      <form method="post" action="" target="" class="" id="myForm">
+
+        <div><h1>Salvar novo item</h1></div>
+
+        <div>
+          <label for="name">Nome do filme:</label>
+          <input type="text" id="name"/>
+        </div>
+
+        <div>
+          <label for="name">Gênero:</label>
+          <input type="text" id="gender" />
+        </div>
+
+        <div>
+          <label for="name">Duração:</label>
+          <input type="text" id="duration" />
+        </div>
+
+        <div>
+          <label for="name">Ano:</label>
+          <input type="text" id="year" />
+        </div>
+
+        <div>
+          <label for="name">Diretor:</label>
+          <input type="text" id="director"  />
+        </div>
+
+        <div>
+          <input type="button" value="Salvar" onclick="save()"></input>
+        </div>
+
+      </form>
+    </div>
+
+    <table class="tableList">
+        <tr class="headTable">
+          <td> # </td>
+          <td> Título </td>
+          <td> Gênero </td>
+          <td> Duração </td>
+          <td> Year </td>
+          <td> Director </td>
+          <td> Ações </td>
+        </tr>
+
+         <tr class="itemTable">
+          <td> 1 </td>
+          <td> A volta dos que não foram </td>
+          <td> Comédia </td>
+          <td> 24 horas </td>
+          <td> 2001 </td>
+          <td> João Silva </td>
+          <td> 
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+        <tr class="itemTable">
+          <td> 1 </td>
+          <td> Rambo 2 </td>
+          <td> Ação </td>
+          <td> 3 horas </td>
+          <td> 1991 </td>
+          <td> Shakws Tsjiuwe </td>
+          <td>
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+        <tr class="itemTable">
+          <td> 1 </td>
+          <td> Tartarugas Ninja 2 - O Segredo do Uzi </td>
+          <td> Aventura </td>
+          <td> 2 horas </td>
+          <td> 1991 </td>
+          <td> Opayht Garrit </td>
+          <td>
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+        <tr class="itemTable">
+          <td> 1 </td>
+          <td> Titanic</td>
+          <td> Romance </td>
+          <td> 2 horas </td>
+          <td> 1997 </td>
+          <td> Arnold Silvester </td>
+          <td>
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+        <tr class="itemTable">
+          <td> 1 </td>
+          <td> Laranja mecânica </td>
+          <td> Ação </td>
+          <td> 4 horas </td>
+          <td> 2001 </td>
+          <td> Antonio Bandeiras  </td>
+          <td>
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+         <tr class="itemTable">
+          <td> 1 </td>
+          <td> Senhor dos anéis </td>
+          <td> Ficcção </td>
+          <td> 2 horas </td>
+          <td> 2001 </td>
+          <td> Maria Rosa </td>
+          <td>
+            <button class="editBtn">E</button> 
+            <button class="deleteBtn">X</button> 
+          </td>
+        </tr>
+
+    </table>
+  </div>
+
+  <!-- VEÍCULOS EM DESTAQUE -->
+ 
+<!-- RODAPÉ -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#">Página Inicial</a>
+      <a href="#">Sobre Nós</a>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+    <p>Filmes Sinodal Web &copy; 2023 - Todos os direitos reservados</p>
+    <p>Endereço: Ramiro Barcelos, 1526 - Montenegro - rs</p>
+    <p>Telefone: (51) 99675-7641 | Email: contato@carrossinodal.com.br</p>
+  </div>
+</footer>
