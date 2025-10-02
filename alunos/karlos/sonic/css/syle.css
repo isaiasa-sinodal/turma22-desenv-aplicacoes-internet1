@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #9ed8ee;
+    overflow: hidden;
+}
+
+.game-board {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    border-bottom: 15px solid rgb(45, 160, 35);
+    position: relative;
+    overflow: hidden;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: moveObstacle 1.5s linear infinite;
+}
+
+.sonic {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    transform: rotateY(180deg);
+}
+
+.jump {
+    animation: jump 0.5s ease;
+}
+
+.nuvens {
+    position: absolute;
+    width: 550px;
+    top: 50px;
+    animation: moveNuvens 15s linear infinite;
+    opacity: 0.8;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    width: 200px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.score img {
+    width: 115px;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: red;
+    background-color: wheat;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: none;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 200px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes moveObstacle {
+    0% {
+        right: -80px;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes moveNuvens {
+    0% {
+        right: -200px;
+    }
+    100% {
+        right: 100%;
+    }
+}
