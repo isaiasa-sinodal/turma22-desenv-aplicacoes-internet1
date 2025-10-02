@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "ano": 2022,
+    "preco": 125000
+  },
+  {
+    "id": 2,
+    "marca": "Honda",
+    "modelo": "Civic",
+    "ano": 2021,
+    "preco": 118000
+  },
+  {
+    "id": 3,
+    "marca": "Ford",
+    "modelo": "Mustang",
+    "ano": 2023,
+    "preco": 350000
+  },
+  {
+    "id": 4,
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "ano": 2022,
+    "preco": 78000
+  },
+  {
+    "id": 5,
+    "marca": "Volkswagen",
+    "modelo": "Golf",
+    "ano": 2020,
+    "preco": 95000
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "institucional": [
+    { "label": "Política de Privacidade", "href": "/privacidade" },
+    { "label": "Termos de Uso", "href": "/termos" }
+  ],
+  "contato": {
+    "email": "contato@empresa.com",
+    "telefone": "+55 (11) 1234-5678"
+  },
+  "redesSociais": [
+    { "label": "LinkedIn", "href": "https://linkedin.com/empresa" },
+    { "label": "Instagram", "href": "https://instagram.com/empresa" }
+  ],
+  "copyright": "© 2025 Empresa. Todos os direitos reservados."
+}

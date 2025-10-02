@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.banner {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 1rem;
+}
+
+header {
+  background: blue;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  background-color: #f0f8ff;
+  padding: 3rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.destaques {
+  margin-bottom: 3rem;
+}
+
+.destaques h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #003366;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.car-grid img{
+width =100%;
+max-width=250px;
+heigth=200px
+padding=25px 30px;
+}
+
+.car-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-image {
+  height: 180px;
+  background-color: #e9ecef;
+  background-image: linear-gradient(45deg, #d0d0d0 25%, transparent 25%, transparent 75%, #d0d0d0 75%, #d0d0d0),
+                    linear-gradient(45deg, #d0d0d0 25%, transparent 25%, transparent 75%, #d0d0d0 75%, #d0d0d0);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+.car-card h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: #003366;
+}
+
+.car-card p {
+  padding: 0 1rem;
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+  color: #006400;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contato {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.contato h2 {
+  margin-bottom: 1rem;
+  color: #003366;
+}
+
+.contato p {
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0000cc;
+}
+
+footer {
+  background: blue;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+footer small {
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .car-grid {
+    grid-template-columns: 1fr;
+  }
+}

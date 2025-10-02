@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMI NOVOS PAGINA NOVA</title>
+    <script src="funcoes.js"></script>
+    <link rel="stylesheet" href="tela.css"/>
+</head>
+<body onload="initAll()">
+    
+    <!-- Menu Superior -->
+    <header>
+        <h3>AQUI É PAGINA DE SEMINOVOS</h3>
+        <nav>
+            <a href="#">Veículos Novos</a> |
+            <a href="seminovos.html">Veículos Seminovos</a> |
+            <a href="#">Tabela Fipe</a> |
+            <a href="#">Entre em Contato</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <div class="banner" id="bannerInicial">
+        
+    </div>
+
+    <!-- Veículos em Destaque -->
+    <div class="container">
+        <h2>VEÍCULOS EM DESTAQUE</h2>
+
+        <div id="listaDeCarros">
+
+        </div>
+
+        <div id="paginador"> 
+            Paginador:  
+            <button class="pageButton" onclick="buildVehicleList(1)">1</button> 
+            <button class="pageButton" onclick="buildVehicleList(2)">2</button> 
+            <button class="pageButton" onclick="buildVehicleList(3)">3 </button> 
+            <button class="pageButton" onclick="buildVehicleList(4)">4 </button> 
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>2025 - FurCars Web</p>
+        <a href="#">Política de Privacidade</a> |
+        <a href="#">Redes Sociais</a> |
+        <a href="#">Fale Conosco</a>
+    </footer>
+</body>
+</html>

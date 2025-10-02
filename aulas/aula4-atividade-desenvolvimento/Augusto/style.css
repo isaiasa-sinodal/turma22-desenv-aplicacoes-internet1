@@ -1,0 +1,115 @@
+
+body {
+    background-color: lightgray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topBar {
+    background-color: rgb(79, 44, 124);
+    color: white;
+    font-size: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+
+.topBar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    text-align: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+
+.banner {
+    background-color: darkviolet;
+    padding: 25px;
+    color: white;
+    text-align: center;
+}
+.banner button {
+    background-color: white;
+    color: darkviolet;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.veiculosEmDestaque {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.veiculosEmDestaque h1 {
+    color: darkviolet;
+}
+
+.carros {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.carros img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.carros button {
+   background-color: white;
+   color: blueviolet;
+   border: none;
+   padding: 10px 15px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 5px;
+   font-weight: bold;
+   font-size: larger;
+    margin-top: 10px;
+
+}
+
+.carros p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.rodape ul {
+    color: white;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+.rodape ul li {
+    color: white;
+}
+.rodape {
+    background-color: rgb(84, 11, 180);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}

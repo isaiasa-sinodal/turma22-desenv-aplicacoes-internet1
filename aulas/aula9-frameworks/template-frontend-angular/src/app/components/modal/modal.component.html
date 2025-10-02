@@ -1,0 +1,7 @@
+<dialog #dialogRef class="modal">
+  <button class="close" (click)="handleClose()">X</button>
+
+  <h2 *ngIf="!!title" class="title">{{ title }}</h2>
+
+  <ng-content></ng-content>
+</dialog>
