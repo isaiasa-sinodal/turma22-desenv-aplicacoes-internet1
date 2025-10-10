@@ -24,7 +24,18 @@ const movies: Movie[] = [
   },
 ];
 
+let moviesPromise: Promise<Movie[]> | null = null;
+
 export async function getMovies() {
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  return movies;
+  if (moviesPromise) {
+    return moviesPromise;
+  }
+
+  moviesPromise = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(movies);
+    }, 500);
+  });
+
+  return moviesPromise;
 }

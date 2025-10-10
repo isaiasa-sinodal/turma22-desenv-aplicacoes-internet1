@@ -1,20 +1,22 @@
-import { useState, type FormEvent, type ChangeEvent } from 'react';
+import { useState, type FormEvent, type ChangeEvent, useEffect } from 'react';
 import { Button } from '../../../components/button';
 import { Input } from '../../../components/input';
 import { Modal } from '../../../components/modal';
-import { createMovie } from '../../../services/movies/create/create';
-import styles from './styles.module.css';
+import { updateMovie } from '../../../services/movies/update';
+import type { Movie } from '../../../types/movie';
+import styles from '../create-movie-modal/styles.module.css';
 
-interface CreateMovieModalProps {
+interface EditMovieModalProps {
+  movie: Movie;
   onClose: () => void;
   onSuccess: () => void;
 }
 
-export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) {
-  const [title, setTitle] = useState('');
-  const [director, setDirector] = useState('');
-  const [year, setYear] = useState('');
-  const [genre, setGenre] = useState('');
+export function EditMovieModal({ movie, onClose, onSuccess }: EditMovieModalProps) {
+  const [title, setTitle] = useState(movie.title);
+  const [director, setDirector] = useState(movie.director);
+  const [year, setYear] = useState(String(movie.year));
+  const [genre, setGenre] = useState(movie.genre);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -26,23 +28,24 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
       genre,
     };
 
-    await createMovie(movieData);
+    // Usamos o serviço de update, passando o ID do filme
+    await updateMovie(movie.id, movieData);
+    
     onSuccess();
   }
 
   return (
     <Modal.Root onClose={onClose}>
       <Modal.Header>
-        <Modal.Title>Cadastrar Filme</Modal.Title>
+        <Modal.Title>Editar Filme</Modal.Title>
         <Modal.Description>
-          Preencha os campos para adicionar um novo filme.
+          Altere os dados do filme abaixo.
         </Modal.Description>
       </Modal.Header>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input
           label="Título"
-          placeholder="Ex: O Poderoso Chefão"
           value={title}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             setTitle(event.target.value)
@@ -50,7 +53,6 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
         />
         <Input
           label="Diretor"
-          placeholder="Ex: Francis Ford Coppola"
           value={director}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             setDirector(event.target.value)
@@ -59,7 +61,6 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
         <Input
           label="Ano"
           type="number"
-          placeholder="Ex: 1972"
           value={year}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             setYear(event.target.value)
@@ -67,7 +68,6 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
         />
         <Input
           label="Gênero"
-          placeholder="Ex: Crime, Drama"
           value={genre}
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             setGenre(event.target.value)
@@ -78,7 +78,7 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
           <Button type="button" onClick={onClose}>
             Cancelar
           </Button>
-          <Button type="submit">Cadastrar</Button>
+          <Button type="submit">Salvar Alterações</Button>
         </Modal.Footer>
       </form>
     </Modal.Root>
