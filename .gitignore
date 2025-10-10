@@ -1,0 +1,3 @@
+# Ignorar todas as pastas node_modules em qualquer lugar
+**/node_modules/
+node_modules/
