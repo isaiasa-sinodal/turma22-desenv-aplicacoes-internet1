@@ -2,7 +2,7 @@
 # Node.js / Frontend Frameworks
 # -------------------------------------
 
-# Dependências
+# Dependencias
 node_modules/
 **/node_modules/
 
@@ -73,7 +73,7 @@ storybook-static/
 # pnpm-lock.yaml
 # bun.lockb
 
-# Produção / Deploy
+# Producao / Deploy
 *.tgz
 *.zip
 
@@ -81,3 +81,61 @@ storybook-static/
 .husky/_/
 eslintcache/
 .prettier_cache/
+
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle-wrapper.jar
+.gradle/
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+/.cxx/
+captures/
+.externalNativeBuild/
+.cxx/
+output.json
+
+# Logs e caches
+*.log
+*.temp
+*.tmp
+*.swp
+*.lock
+*.orig
+
+# Arquivos de chave/seguranc
+*.keystore
+*.jks
+*.key
+*.pem
+
+# Arquivos de dependencia
+dependencyUpdates/
+reports/
+
+# Arquivos de release
+app/release/
+app/release/*.apk
+app/release/*.aab
+
+# Fastlane 
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Firebase/Google Services
+google-services.json
+firebase-debug.log
+
+# NDK e CMake
+obj/
+
