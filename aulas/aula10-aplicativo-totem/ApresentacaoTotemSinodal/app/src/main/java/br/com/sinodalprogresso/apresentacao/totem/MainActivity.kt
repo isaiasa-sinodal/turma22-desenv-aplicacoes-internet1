@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var scrollView: ScrollView
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "DiscouragedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -68,47 +68,49 @@ class MainActivity : AppCompatActivity() {
         )
 
         // setupActionBarWithNavController(navController, appBarConfiguration)
+
         // Se quiser menu lateral, pode manter:
         // binding.navView.setupWithNavController(navController)
 
+        val totalSlides = resources.getInteger(R.integer.totalSlides)
+
         val slidesContainer = findViewById<LinearLayout>(R.id.slidesContainer)
-        for (i in 1..20) {
-            // texto vindo das strings.xml
-            val textResId = resources.getIdentifier("slide$i", "string", packageName)
-            val slideText = if (textResId != 0) getString(textResId) else "Slide $i"
-
-            // imagem vinda do drawable-nodpi
-            val imageResId = resources.getIdentifier("slide$i", "drawable", packageName)
-
-            // cria o TextView
-            val textView = TextView(this).apply {
-                text = slideText
-                textSize = 32f
-                setTextColor(android.graphics.Color.WHITE)
-                textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-                setPadding(0, 40, 0, 20)
-            }
-
-            // cria o ImageView
-            val imageView = ImageView(this).apply {
-                if (imageResId != 0) setImageResource(imageResId)
-                adjustViewBounds = true
-                scaleType = ImageView.ScaleType.CENTER_INSIDE
-                setPadding(0, 20, 0, 60)
-                layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                ).apply {
-                    gravity = android.view.Gravity.CENTER_HORIZONTAL
-                }
-            }
-
-            // adiciona ao container
-            slidesContainer.addView(textView)
-            slidesContainer.addView(imageView)
+        for (i in 1.. totalSlides) {
+            buildSlide(i, slidesContainer)
         }
     }
 
+    fun buildSlide(i : Int, slidesContainer: LinearLayout) {
+
+        val textResId = resources.getIdentifier("slide$i", "string", packageName)
+        val slideText = if (textResId != 0) getString(textResId) else "Slide $i"
+
+        val imageResId = resources.getIdentifier("slide$i", "drawable", packageName)
+
+        val textView = TextView(this).apply {
+            text = slideText
+            textSize = 32f
+            setTextColor(android.graphics.Color.WHITE)
+            textAlignment = TextView.TEXT_ALIGNMENT_CENTER
+            setPadding(0, 40, 0, 20)
+        }
+
+        val imageView = ImageView(this).apply {
+            if (imageResId != 0) setImageResource(imageResId)
+            adjustViewBounds = true
+            scaleType = ImageView.ScaleType.CENTER_INSIDE
+            setPadding(0, 20, 0, 60)
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                gravity = android.view.Gravity.CENTER_HORIZONTAL
+            }
+        }
+
+        slidesContainer.addView(textView)
+        slidesContainer.addView(imageView)
+    }
 
     override fun onCreateOptionsMenu(menu: android.view.Menu): Boolean {
         return true

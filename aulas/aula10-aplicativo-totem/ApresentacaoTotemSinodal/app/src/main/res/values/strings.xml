@@ -12,6 +12,9 @@
     <string name="menu_slideshow">Slideshow</string>
 
 
+    <integer name="totalSlides">21</integer>
+
+
     <string name="slide1">Solucionando problemas</string>
     <string name="slide2">Criando oportunidades</string>
     <string name="slide3">Estruturas Curriculares</string>
@@ -32,5 +35,6 @@
     <string name="slide18">Competências</string>
     <string name="slide19">Destaque-se</string>
     <string name="slide20">Venha para o Sinodal</string>
+    <string name="slide21">Qualquer bobagem</string>
 
 </resources>
