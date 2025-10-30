@@ -1,0 +1,113 @@
+.homePage {
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.homePage:hover {
+  transform: translateY(-2px);
+}
+
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+
+.homePage table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.homePage table th {
+  padding: 14px 12px;
+  text-align: left;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.homePage table td {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+  transition: background-color 0.2s ease;
+}
+
+.homePage table tr:hover td {
+  background-color: #f9f9f9;
+}
+
+.homePage table .actionsHeader {
+  text-align: center;
+}
+
+.homePage table .actions {
+  width: 160px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5px;
+}
+.homePage table .actions button {
+  flex: 1; 
+  min-width: 70px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.homePage table .actions button:first-child {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.homePage table .actions button:first-child:hover {
+  background-color: #357ac9;
+}
+
+.homePage table .actions button:last-child {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.homePage table .actions button:last-child:hover {
+  background-color: #c0392b;
+}
+
+.homePage table .actions button:not(:first-child) {
+  margin-left: 10px;
+}
+
+
+.emptyList p {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+  color: #777;
+}
