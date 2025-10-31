@@ -39,64 +39,86 @@ export function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      {isCreateModalOpen && (
-        <CreateMovieModal
-          onClose={handleCloseModals}
-          onSuccess={handleMovieSuccess}
-        />
-      )}
-      
-      {movieToDelete && (
-        <DeleteMovieModal 
-          movieId={movieToDelete.id}
-          onClose={handleCloseModals}
-          onSuccess={handleMovieSuccess}
-        />
-      )}
-      
+    <>
       {}
-      {movieToEdit && (
-        <EditMovieModal
-          movie={movieToEdit}
-          onClose={handleCloseModals}
-          onSuccess={handleMovieSuccess}
-        />
-      )}
-
-      <header className={styles.header}>
-        <h1>Catálogo de Filmes</h1>
-        <Button type="button" onClick={handleOpenCreateModal}>
-          Adicionar Filme
-        </Button>
+      <header className={styles.topHeader}>
+        <h2>CrudWeb</h2>
       </header>
+    
+      {}
+      <div className={styles.container}>
+        {isCreateModalOpen && (
+          <CreateMovieModal
+            onClose={handleCloseModals}
+            onSuccess={handleMovieSuccess}
+          />
+        )}
+        
+        {movieToDelete && (
+          <DeleteMovieModal 
+            movieId={movieToDelete.id}
+            onClose={handleCloseModals}
+            onSuccess={handleMovieSuccess}
+          />
+        )}
+        
+        {movieToEdit && (
+          <EditMovieModal
+            movie={movieToEdit}
+            onClose={handleCloseModals}
+            onSuccess={handleMovieSuccess}
+          />
+        )}
 
-      <table className={styles.table}>
-        <thead>
+        {}
+        <header className={styles.header}>
+          <h1>Catálogo de Filmes</h1>
           {}
-        </thead>
-        <tbody>
-          {movies.map((movie) => (
-            <tr key={movie.id}>
-              <td>{movie.title}</td>
-              <td>{movie.director}</td>
-              <td>{movie.year}</td>
-              <td>{movie.genre}</td>
-              <td>
-                <div className={styles.actions}>
-                  {}
-                  <Button onClick={() => setMovieToEdit(movie)}>
-                    Editar
-                  </Button>
-                  <Button onClick={() => setMovieToDelete(movie)}>
-                    Excluir
-                  </Button>
-                </div>
-              </td>
+          <Button type="button" onClick={handleOpenCreateModal}>
+            Adicionar Filme
+          </Button>
+        </header>
+
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Diretor</th>
+              <th>Ano</th>
+              <th>Gênero</th>
+              <th>Ações</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {movies.map((movie) => (
+              <tr key={movie.id}>
+                <td>{movie.title}</td>
+                <td>{movie.director}</td>
+                <td>{movie.year}</td>
+                <td>{movie.genre}</td>
+                <td>
+                  <div className={styles.actions}>
+                    {}
+                    <Button 
+                      variant="primary" 
+                      onClick={() => setMovieToEdit(movie)}
+                    >
+                      Editar
+                    </Button>
+                    {}
+                    <Button 
+                      variant="danger" 
+                      onClick={() => setMovieToDelete(movie)}
+                    >
+                      Excluir
+                    </Button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

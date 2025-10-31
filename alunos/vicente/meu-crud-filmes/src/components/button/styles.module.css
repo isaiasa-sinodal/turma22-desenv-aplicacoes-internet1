@@ -1,14 +1,35 @@
 .button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.2s;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  color: var(--cor-texto-claro);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.primary {
+  background-color: var(--cor-primaria);
+}
+.primary:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+.danger {
+  background-color: var(--cor-perigo);
+}
+.danger:hover {
+  background-color: var(--cor-perigo-hover);
+}

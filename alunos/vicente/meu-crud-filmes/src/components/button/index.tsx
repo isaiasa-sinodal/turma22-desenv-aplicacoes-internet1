@@ -1,8 +1,25 @@
-import type { ComponentProps } from 'react';
+import { type ComponentProps } from 'react';
 import styles from './styles.module.css';
 
-type ButtonProps = ComponentProps<'button'>;
+type ButtonVariant = 'primary' | 'danger';
 
-export function Button(props: ButtonProps) {
-  return <button className={styles.button} {...props} />;
+interface ButtonProps extends ComponentProps<'button'> {
+  variant?: ButtonVariant;
+}
+
+export function Button({
+  children,
+  variant = 'primary',
+  className,
+  ...props
+}: ButtonProps) {
+  const buttonClassName = `${styles.button} ${styles[variant]} ${
+    className || ''
+  }`;
+
+  return (
+    <button className={buttonClassName} {...props}>
+      {children}
+    </button>
+  );
 }

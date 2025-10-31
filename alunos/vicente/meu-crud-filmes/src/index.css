@@ -1,0 +1,32 @@
+:root {
+  --cor-fundo-pagina: #f0f2f5;
+  --cor-fundo-card: #ffffff;
+  --cor-header-escuro: #212529;
+  --cor-texto-claro: #ffffff;
+  --cor-texto-escuro: #333;
+  --cor-texto-secundario: #6c757d;
+
+  --cor-primaria: #007bff;
+  --cor-primaria-hover: #0056b3;
+  --cor-perigo: #dc3545;
+  --cor-perigo-hover: #c82333;
+
+  --cor-borda: #dee2e6;
+  --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-escuro);
+}
