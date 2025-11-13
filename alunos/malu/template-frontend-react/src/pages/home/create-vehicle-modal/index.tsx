@@ -46,7 +46,7 @@ export function CreateVehicleModal({ isOpen, onClose, onReload }: Props) {
   }
 
   return (
-    <Modal title="Cadastro de Veículo" isOpen={isOpen} onClose={onClose}>
+    <Modal title="Cadastro de Livro" isOpen={isOpen} onClose={onClose}>
       <form ref={formRef} onSubmit={handleSubmit}>
         <Input name="chassi" label="Código" required />
         <Input name="brand" label="Título" required />

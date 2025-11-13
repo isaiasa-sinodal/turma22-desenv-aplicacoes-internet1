@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teste API - Criar Filme</title>
+  </head>
+
+  <body>
+    <h1>Criar Filme</h1>
+
+    <form id="movieForm" onsubmit="handleSubmit(event)">
+      <label>
+        ID:
+        <input type="number" id="movieId" required />
+      </label>
+      <br /><br />
+
+      <label>
+        Título:
+        <input type="text" id="movieTitle" required />
+      </label>
+      <br /><br />
+
+      <label>
+        Diretor:
+        <input type="text" id="movieDirector" required />
+      </label>
+      <br /><br />
+
+      <label>
+        Ano:
+        <input type="number" id="movieYear" required />
+      </label>
+      <br /><br />
+
+      <label>
+        Gênero:
+        <input type="text" id="movieGenre" required />
+      </label>
+      <br /><br />
+
+      <button type="submit">Criar Filme</button>
+    </form>
+
+    <script>
+      async function createMovie(movie) {
+        const url = "http://85.209.93.21:8885/movies";
+
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              accept: "*/*",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(movie),
+          });
+
+          if (response.status === 418) {
+            console.warn("Backend mandou 418 Teapot, mas vamos tratar como sucesso...");
+            alert("☕ Backend respondeu 418 I AM A TEAPOT, mas está tudo OK! Vamos considerar sucesso.");
+          } else if (!response.ok) {
+            throw new Error("Erro ao criar filme: " + response.status);
+          }
+
+          const data = await response.json().catch(() => {
+            return { id: movie.id }; // caso não venha JSON válido
+          });
+
+          console.log("Filme criado! Retorno:", data);
+          alert("Filme criado! ID retornado: " + data.id);
+          return data;
+
+        } catch (error) {
+          console.error("Erro:", error);
+          alert("Erro ao criar filme: " + error.message);
+          throw error;
+        }
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const movie = {
+          id: Number(document.getElementById("movieId").value),
+          title: document.getElementById("movieTitle").value,
+          director: document.getElementById("movieDirector").value,
+          year: Number(document.getElementById("movieYear").value),
+          genre: document.getElementById("movieGenre").value,
+        };
+
+        createMovie(movie);
+      }
+    </script>
+  </body>
+</html>

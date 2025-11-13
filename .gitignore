@@ -82,15 +82,60 @@ storybook-static/
 eslintcache/
 .prettier_cache/
 
+
+
+# -------------------------------------
+# Spring Boot / Java / Maven / Gradle
+# -------------------------------------
+
+# Maven
+target/
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
 # Gradle
 .gradle/
 build/
 **/build/
 !gradle-wrapper.jar
-.gradle/
 local.properties
 
-# Android Studio
+# Arquivos gerados automaticamente
+dependency-reduced-pom.xml
+
+# Backup e metadata do Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Arquivos temporários do Java
+hs_err_pid*
+replay_pid*
+
+# Configurações locais
+*.properties.local
+application-local.yml
+application-local.properties
+*.iml
+
+
+
+# -------------------------------------
+# Android / Android Studio
+# -------------------------------------
+
 .idea/
 *.iml
 *.ipr
@@ -110,17 +155,17 @@ output.json
 *.lock
 *.orig
 
-# Arquivos de chave/seguranc
+# Arquivos de chave/segurança
 *.keystore
 *.jks
 *.key
 *.pem
 
-# Arquivos de dependencia
+# Arquivos de dependência
 dependencyUpdates/
 reports/
 
-# Arquivos de release
+# Releases Android
 app/release/
 app/release/*.apk
 app/release/*.aab
@@ -139,3 +184,18 @@ firebase-debug.log
 # NDK e CMake
 obj/
 
+
+
+# -------------------------------------
+# Extras comuns
+# -------------------------------------
+
+# Arquivos de SO
+Thumbs.db
+.DS_Store
+
+# Arquivos de swap/editor
+*.swp
+*.swo
+*.tmp
+*.bak
