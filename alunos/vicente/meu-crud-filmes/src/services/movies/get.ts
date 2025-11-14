@@ -1,41 +1,12 @@
 import type { Movie } from '../../types/movie';
+import api from '../../utils/api';
 
-const movies: Movie[] = [
-  {
-    id: 1,
-    title: 'Gente Grande',
-    director: 'Dennis Dugan',
-    year: 2010,
-    genre: 'Comédia, Buddy, Drama',
-  },
-  {
-    id: 2,
-    title: 'The Batman',
-    director: 'Matt Reeves',
-    year: 2022,
-    genre: 'Ação, Aventura, Mistério',
-  },
-  {
-    id: 3,
-    title: 'Harry Potter e o Prisioneiro de Azkaban',
-    director: 'Alfonso Cuarón',
-    year: 2004,
-    genre: 'Ação, Mistério, Fantasia',
-  },
-];
-
-let moviesPromise: Promise<Movie[]> | null = null;
-
-export async function getMovies() {
-  if (moviesPromise) {
-    return moviesPromise;
+export async function getMovies(): Promise<Movie[]> {
+  try {
+    const response = await api.get<Movie[]>('/'); 
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar filmes:', error);
+    throw new Error('Não foi possível carregar o catálogo de filmes.');
   }
-
-  moviesPromise = new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(movies);
-    }, 500);
-  });
-
-  return moviesPromise;
 }

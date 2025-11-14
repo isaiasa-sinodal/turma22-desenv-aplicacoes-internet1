@@ -1,19 +1,12 @@
 import type { Movie } from '../../types/movie';
-import { getMovies } from './get';
+import api from '../../utils/api';
 
-export async function updateMovie(id: number, data: Omit<Movie, 'id'>) {
-  const movies = await getMovies();
-
-  const movieIndex = movies.findIndex((movie) => movie.id === id);
-
-  if (movieIndex > -1) {
-    movies[movieIndex] = {
-      id,
-      ...data,
-    };
-    console.log(`Filme com ID ${id} foi atualizado.`);
-    return movies[movieIndex];
+export async function updateMovie(movie: Movie): Promise<Movie> {
+  try {
+    const response = await api.put<Movie>(`/${movie.id}`, movie);
+    return response.data;
+  } catch (error) {
+    console.error(`Erro ao editar o filme ID ${movie.id}:`, error);
+    throw new Error(`Não foi possível editar o filme "${movie.title}".`);
   }
-
-  return null;
 }
