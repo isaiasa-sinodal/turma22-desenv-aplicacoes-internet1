@@ -36,11 +36,11 @@ export function DeleteVehicleModal({
       </strong>
     </>
   ) : (
-    'este veículo'
+    'este livro'
   )
 
   return (
-    <Modal title="Excluir Veículo" isOpen={isOpen} onClose={onClose}>
+    <Modal title="Excluir livro" isOpen={isOpen} onClose={onClose}>
       <p style={{ lineHeight: 1.4 }}>
         Tem certeza de que deseja excluir {vehicleDescription}? Essa ação não
         poderá ser desfeita.
