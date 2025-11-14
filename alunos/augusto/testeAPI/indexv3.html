@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies API Interface</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-get { background: #28a745; color: white; }
+    .btn-post { background: #007bff; color: white; }
+    .btn-delete { background: #dc3545; color: white; }
+
+    /* Resultado GET */
+    .filme {
+      background: white;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .close {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Movies API Interface</h1>
+
+<button class="btn-get" onclick="fazerGet()">GET Filmes</button>
+<button class="btn-post" onclick="abrirModal()">POST Filme</button>
+
+<div id="saida"></div>
+
+<!-- Modal para POST -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()">X</span>
+    <h3>Adicionar Filme</h3>
+
+    <label>ID</label>
+    <input id="id" type="number">
+
+    <label>Título</label>
+    <input id="title" type="text">
+
+    <label>Diretor</label>
+    <input id="director" type="text">
+
+    <label>Ano</label>
+    <input id="year" type="number">
+
+    <label>Gênero</label>
+    <input id="genre" type="text">
+
+    <button class="btn-post" style="margin-top: 15px;" onclick="fazerPost()">Enviar</button>
+  </div>
+</div>
+
+<script>
+const API = "http://85.209.93.21:8885/movies";
+
+/* -------- MODAL -------- */
+function abrirModal() {
+  document.getElementById("modal").style.display = "flex";
+}
+
+function fecharModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+/* -------- GET FILMES -------- */
+async function fazerGet() {
+  const saida = document.getElementById("saida");
+
+  try {
+    const resposta = await fetch(API);
+    const filmes = await resposta.json();
+
+    saida.innerHTML = ""; // limpa tela
+
+    filmes.forEach(filme => {
+      const div = document.createElement("div");
+      div.className = "filme";
+
+      div.innerHTML = `
+        <strong>ID:</strong> ${filme.id}<br>
+        <strong>Título:</strong> ${filme.title}<br>
+        <strong>Diretor:</strong> ${filme.director}<br>
+        <strong>Ano:</strong> ${filme.year}<br>
+        <strong>Gênero:</strong> ${filme.genre}<br><br>
+        <button class="btn-delete" onclick="deletarFilme(${filme.id})">Excluir</button>
+      `;
+
+      saida.appendChild(div);
+    });
+
+  } catch (erro) {
+    saida.innerHTML = "Erro: " + erro;
+  }
+}
+
+/* -------- POST FILME -------- */
+async function fazerPost() {
+  const filme = {
+    id: Number(document.getElementById("id").value),
+    title: document.getElementById("title").value,
+    director: document.getElementById("director").value,
+    year: Number(document.getElementById("year").value),
+    genre: document.getElementById("genre").value
+  };
+
+  try {
+    await fetch(API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "accept": "*/*"
+      },
+      body: JSON.stringify(filme)
+    });
+
+    fecharModal();
+    fazerGet(); // atualiza lista
+
+  } catch (erro) {
+    alert("Erro ao enviar: " + erro);
+  }
+}
+
+/* -------- DELETE FILME -------- */
+async function deletarFilme(id) {
+  if (!confirm("Tem certeza que deseja excluir o filme ID " + id + "?")) return;
+
+  try {
+    await fetch(`${API}/${id}`, {
+      method: "DELETE",
+      headers: { "accept": "*/*" }
+    });
+
+    fazerGet(); // atualizar lista
+
+  } catch (erro) {
+    alert("Erro ao excluir: " + erro);
+  }
+}
+</script>
+
+</body>
+</html>
