@@ -2,7 +2,7 @@ import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { Button } from '../../../components/button';
 import { Input } from '../../../components/input';
 import { Modal } from '../../../components/modal';
-import { createMovie } from '../../../services/movies/create/create';
+import { createMovie, type CreateMovieData } from '../../../services/movies/create/create'; 
 import styles from './styles.module.css';
 
 interface CreateMovieModalProps {
@@ -16,18 +16,33 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
   const [year, setYear] = useState('');
   const [genre, setGenre] = useState('');
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false); 
+
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
+    setErrorMessage(null);
+    setIsLoading(true);
 
-    const movieData = {
+    const movieData: CreateMovieData = {
       title,
       director,
       year: Number(year),
       genre,
     };
 
-    await createMovie(movieData);
-    onSuccess();
+    try {
+        await createMovie(movieData);
+        
+        onSuccess();
+    } catch (error: any) {
+        console.error('Erro de submissão no modal:', error);
+        
+        const message = error.message || 'Erro de comunicação com a API. Consulte o console.';
+        setErrorMessage(message); 
+    } finally {
+        setIsLoading(false);
+    }
   }
 
   return (
@@ -74,11 +89,21 @@ export function CreateMovieModal({ onClose, onSuccess }: CreateMovieModalProps) 
           }
         />
 
+        {}
+        {errorMessage && (
+            <p style={{ color: 'red', margin: '10px 0', textAlign: 'center' }}>
+                **{errorMessage}**
+            </p>
+        )}
+        {}
+
         <Modal.Footer>
-          <Button type="button" onClick={onClose}>
+          <Button type="button" onClick={onClose} disabled={isLoading}>
             Cancelar
           </Button>
-          <Button type="submit">Cadastrar</Button>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? 'Cadastrando...' : 'Cadastrar'}
+          </Button>
         </Modal.Footer>
       </form>
     </Modal.Root>

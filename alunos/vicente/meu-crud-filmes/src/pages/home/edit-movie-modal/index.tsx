@@ -18,8 +18,13 @@ export function EditMovieModal({ movie, onClose, onSuccess }: EditMovieModalProp
   const [year, setYear] = useState(String(movie.year));
   const [genre, setGenre] = useState(movie.genre);
 
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false); 
+
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
+    setErrorMessage(null);
+    setIsLoading(true);
 
     const movieData = {
       title,
@@ -27,11 +32,21 @@ export function EditMovieModal({ movie, onClose, onSuccess }: EditMovieModalProp
       year: Number(year),
       genre,
     };
-
-    // Usamos o serviço de update, passando o ID do filme
-    await updateMovie(movie.id, movieData);
     
-    onSuccess();
+    try {
+
+        await updateMovie(movie.id, movieData); 
+        
+        onSuccess();
+    } catch (error: any) {
+
+        console.error('Erro de submissão da edição:', error); 
+        
+        const message = error.message || 'Erro de comunicação com a API.';
+        setErrorMessage(message); 
+    } finally {
+        setIsLoading(false);
+    }
   }
 
   return (
@@ -73,12 +88,23 @@ export function EditMovieModal({ movie, onClose, onSuccess }: EditMovieModalProp
             setGenre(event.target.value)
           }
         />
+        
+        {}
+        {errorMessage && (
+            <p style={{ color: 'red', margin: '10px 0', textAlign: 'center' }}>
+                **{errorMessage}**
+            </p>
+        )}
+        {}
+
 
         <Modal.Footer>
-          <Button type="button" onClick={onClose}>
+          <Button type="button" onClick={onClose} disabled={isLoading}>
             Cancelar
           </Button>
-          <Button type="submit">Salvar Alterações</Button>
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? 'Salvando...' : 'Salvar Alterações'}
+          </Button>
         </Modal.Footer>
       </form>
     </Modal.Root>

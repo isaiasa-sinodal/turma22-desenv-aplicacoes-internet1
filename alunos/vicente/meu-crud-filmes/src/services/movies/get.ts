@@ -3,10 +3,9 @@ import api from '../../utils/api';
 
 export async function getMovies(): Promise<Movie[]> {
   try {
-    const response = await api.get<Movie[]>('/'); 
+    const response = await api.get<Movie[]>(''); 
     return response.data;
   } catch (error) {
-    console.error('Erro ao buscar filmes:', error);
     throw new Error('Não foi possível carregar o catálogo de filmes.');
   }
 }
