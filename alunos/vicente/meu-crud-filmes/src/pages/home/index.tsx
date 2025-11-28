@@ -42,7 +42,7 @@ export function Home() {
     <>
       {}
       <header className={styles.topHeader}>
-        <h2>CrudWeb</h2>
+        <h2>VicenteCrud</h2>
       </header>
     
       {}
