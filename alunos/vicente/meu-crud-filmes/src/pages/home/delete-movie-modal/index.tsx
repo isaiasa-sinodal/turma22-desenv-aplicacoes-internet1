@@ -28,7 +28,7 @@ export function DeleteMovieModal({ movieId, onClose, onSuccess }: DeleteMovieMod
         <Button type="button" onClick={onClose}>
           Cancelar
         </Button>
-        <Button type="button" onClick={handleDelete}>
+        <Button type="button" variant="danger" onClick={handleDelete}>
           Sim, Excluir
         </Button>
       </Modal.Footer>
